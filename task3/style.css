@@ -129,17 +129,18 @@ body {
   left: 14px;
   width: 18px;
   height: 18px;
-  color: var(--text-muted);
+  color: var(--accent-blue);
+  opacity: 1 !important;
   pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.3s var(--ease-spring);
 }
 
 .input-icon svg {
   width: 100%;
   height: 100%;
+  opacity: 1 !important;
 }
 
 #todo-input {
@@ -169,10 +170,6 @@ body {
   background: rgba(14, 22, 44, 0.95);
   border-color: var(--accent-blue);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18), 0 0 16px rgba(59, 130, 246, 0.15);
-}
-
-#todo-input:focus ~ .input-icon {
-  color: var(--accent-blue);
 }
 
 #todo-input.input-error {
@@ -217,6 +214,7 @@ body {
 .btn-icon {
   width: 17px;
   height: 17px;
+  opacity: 1 !important;
 }
 
 .validation-msg {
@@ -251,6 +249,12 @@ body {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
+  transition: transform 0.35s var(--ease-spring);
+  opacity: 1 !important;
+}
+
+.validation-msg.visible .warning-icon {
+  transform: scale(1.05);
 }
 
 .todo-controls {
