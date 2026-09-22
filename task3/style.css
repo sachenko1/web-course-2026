@@ -91,7 +91,6 @@ body {
   padding: 34px 28px;
   position: relative;
   z-index: 1;
-  animation: cardEntrance 0.7s var(--ease-spring);
 }
 
 .app-header {
@@ -252,11 +251,6 @@ body {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
-  transition: transform 0.35s var(--ease-spring);
-}
-
-.validation-msg.visible .warning-icon {
-  transform: scale(1.05);
 }
 
 .todo-controls {
@@ -307,7 +301,7 @@ body {
   color: var(--text-secondary);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: color 0.25s ease, opacity 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 .filter-btn:hover {
@@ -353,9 +347,13 @@ body {
   background: var(--item-bg);
   border: 1px solid var(--item-border);
   border-radius: var(--radius-lg);
-  transition: var(--transition);
-  animation: itemEntrance 0.3s var(--ease-spring) forwards;
+  transition: background-color 0.25s var(--ease-spring),
+              border-color 0.25s var(--ease-spring),
+              transform 0.25s var(--ease-spring),
+              box-shadow 0.25s var(--ease-spring);
+  animation: itemEntrance 0.25s var(--ease-spring) forwards;
   overflow: hidden;
+  opacity: 1;
 }
 
 .todo-item:hover {
@@ -366,7 +364,7 @@ body {
 }
 
 .todo-item.removing {
-  animation: itemRemove 0.28s var(--ease-spring) forwards;
+  animation: itemRemove 0.24s var(--ease-spring) forwards;
   pointer-events: none;
 }
 
@@ -387,6 +385,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1 !important;
 }
 
 .custom-checkbox-wrapper input {
@@ -434,7 +433,7 @@ body {
   line-height: 1.4;
   color: var(--text-primary);
   word-break: break-word;
-  transition: var(--transition);
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .todo-item.completed {
@@ -444,8 +443,7 @@ body {
 
 .todo-item.completed .todo-text {
   text-decoration: line-through;
-  opacity: 0.45;
-  color: var(--text-secondary);
+  color: var(--text-muted);
 }
 
 .delete-btn {
@@ -459,8 +457,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition);
+  transition: color 0.2s ease, background-color 0.2s ease;
   flex-shrink: 0;
+  opacity: 1 !important;
 }
 
 .delete-btn svg {
@@ -485,7 +484,6 @@ body {
 .empty-state {
   text-align: center;
   padding: 42px 14px;
-  animation: fadeIn 0.4s var(--ease-spring);
 }
 
 .empty-state.hidden {
@@ -522,31 +520,17 @@ body {
   color: var(--text-secondary);
 }
 
-@keyframes cardEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 @keyframes itemEntrance {
   from {
-    opacity: 0;
-    transform: translateY(10px) scale(0.98);
+    transform: translateY(6px);
   }
   to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 @keyframes itemRemove {
   0% {
-    opacity: 1;
     transform: scale(1);
     max-height: 70px;
     margin-bottom: 0;
@@ -554,8 +538,7 @@ body {
     padding-bottom: 12px;
   }
   100% {
-    opacity: 0;
-    transform: translateX(16px) scale(0.96);
+    transform: translateX(12px);
     max-height: 0;
     margin-bottom: -8px;
     padding-top: 0;
@@ -567,11 +550,6 @@ body {
   0% { transform: scale(1); }
   50% { transform: scale(0.995); }
   100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 @keyframes pulseGlow {
