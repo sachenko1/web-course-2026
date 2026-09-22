@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Engineer Workspace</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="mac-window">
+
+    <header class="window-header">
+      <div class="traffic-lights">
+        <span class="dot dot-close"></span>
+        <span class="dot dot-min"></span>
+        <span class="dot dot-max"></span>
+      </div>
+
+      <div class="window-title">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 7v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/>
+        </svg>
+        portfolio-ml &mdash; Саченко Егор
+      </div>
+
+      <div class="window-spacer"></div>
+    </header>
+
+    <div class="workbench">
+
+      <aside class="activity-dock">
+        <div class="dock-group">
+          <div class="dock-btn active" title="Project Files">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 7v13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-6l-2-2H5a2 2 0 0 0-2 2z"/>
+            </svg>
+          </div>
+          <div class="dock-btn" title="AI & Models">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <line x1="9" y1="1" x2="9" y2="4"/>
+              <line x1="15" y1="1" x2="15" y2="4"/>
+              <line x1="9" y1="20" x2="9" y2="23"/>
+              <line x1="15" y1="20" x2="15" y2="23"/>
+              <line x1="20" y1="9" x2="23" y2="9"/>
+              <line x1="20" y1="14" x2="23" y2="14"/>
+              <line x1="1" y1="9" x2="4" y2="9"/>
+              <line x1="1" y1="14" x2="4" y2="14"/>
+            </svg>
+          </div>
+          <div class="dock-btn" title="Run & Debug Console">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5"/>
+              <line x1="12" y1="19" x2="20" y2="19"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="dock-group">
+          <div class="dock-btn" title="Preferences">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Editor Container -->
+      <main class="editor-section">
+
+        <!-- Tabs Radio Triggers -->
+        <input type="radio" name="main-tab" id="tab-1" class="tab-toggle" checked>
+        <input type="radio" name="main-tab" id="tab-2" class="tab-toggle">
+        <input type="radio" name="main-tab" id="tab-3" class="tab-toggle">
+        <input type="radio" name="main-tab" id="tab-4" class="tab-toggle">
+
+        <div class="editor-tabs">
+          <label for="tab-1" class="tab-item">
+            <svg width="16" height="16" viewBox="0 0 32 32" style="overflow: visible;">
+              <defs>
+                <clipPath id="jupiter-sphere">
+                  <circle cx="16" cy="16" r="13" />
+                </clipPath>
+                <!-- Объемная тень планеты -->
+                <radialGradient id="jupiter-shading" cx="35%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#fff" stop-opacity="0.25"/>
+                  <stop offset="50%" stop-color="#000" stop-opacity="0"/>
+                  <stop offset="100%" stop-color="#05070a" stop-opacity="0.85"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Тело планеты Юпитер с атмосферой и полосами -->
+              <g clip-path="url(#jupiter-sphere)">
+                <!-- Базовый кремово-бежевый слой атмосферы -->
+                <rect x="2" y="2" width="28" height="28" fill="#d9a066"/>
+                
+                <!-- Характерные полосы Юпитера -->
+                <path d="M2 7 Q 16 9 30 7 L30 11 Q 16 13 2 11 Z" fill="#9e5b32"/>
+                <path d="M2 13 Q 16 11 30 13 L30 15 Q 16 13 2 15 Z" fill="#c47a47"/>
+                <path d="M2 17 Q 16 19 30 17 L30 22 Q 16 24 2 22 Z" fill="#8d4925"/>
+                <path d="M2 24 Q 16 26 30 24 L30 27 Q 16 29 2 27 Z" fill="#b86f3d"/>
+                <path d="M2 2 Q 16 4 30 2 L30 5 Q 16 6 2 5 Z" fill="#753d1d"/>
+
+                <!-- Знаменитое Большое Красное Пятно (Great Red Spot) -->
+                <ellipse cx="22" cy="19.5" rx="3.5" ry="2.2" fill="#c0392b"/>
+                <ellipse cx="22" cy="19.5" rx="2.2" ry="1.2" fill="#e74c3c"/>
+
+                <!-- Сферическая светотень -->
+                <circle cx="16" cy="16" r="13" fill="url(#jupiter-shading)" />
+              </g>
+
+              <!-- Атмосферный контур / свечение -->
+              <circle cx="16" cy="16" r="13" fill="none" stroke="#f39c12" stroke-width="0.8" stroke-opacity="0.5"/>
+
+              <!-- Орбитальный спутник (луна Юпитера) -->
+              <circle cx="28.5" cy="8.5" r="1.5" fill="#f8fafc" stroke="#161b22" stroke-width="0.5"/>
+              <circle cx="4" cy="22" r="1" fill="#cbd5e1" stroke="#161b22" stroke-width="0.5"/>
+            </svg>
+            about_me.ipynb
+          </label>
+          <label for="tab-2" class="tab-item">
+            <svg width="15" height="15" viewBox="0 0 32 32">
+              <path fill="#387EB8" d="M15.89 2.1c-6.8 0-6.37 2.95-6.37 2.95l.01 3.06h6.49v.92H6.91s-4.32.49-4.32 6.33c0 5.85 3.77 5.64 3.77 5.64h2.25v-3.14s-.12-3.75 3.68-3.75h6.32s3.56.06 3.56-3.46V4.99s.52-2.89-6.28-2.89zm-3.48 1.93a1.14 1.14 0 1 1 0 2.28 1.14 1.14 0 0 1 0-2.28z"/>
+              <path fill="#FFE052" d="M16.11 29.9c6.8 0 6.37-2.95 6.37-2.95l-.01-3.06h-6.49v-.92h9.11s4.32-.49 4.32-6.33c0-5.85-3.77-5.64-3.77-5.64h-2.25v3.14s.12 3.75-3.68 3.75h-6.32s-3.56-.06-3.56 3.46v5.66s-.52 2.89 6.28 2.89zm3.48-1.93a1.14 1.14 0 1 1 0-2.28 1.14 1.14 0 0 1 0 2.28z"/>
+            </svg>
+            projects.py
+          </label>
+          <label for="tab-3" class="tab-item">
+            <svg width="15" height="15" viewBox="0 0 32 32">
+              <path fill="#FBC02D" d="M11.5 6C9.57 6 8 7.57 8 9.5v3.25c0 1.24-.76 2.25-2 2.25v2c1.24 0 2 1.01 2 2.25v3.25C8 24.43 9.57 26 11.5 26h1.5v-2.5h-1.5c-.83 0-1.5-.67-1.5-1.5v-3.75c0-1.38-.89-2.5-2.25-2.75 1.36-.25 2.25-1.37 2.25-2.75V9c0-.83.67-1.5 1.5-1.5H13V5h-1.5zm9 0H19v2.5h1.5c.83 0 1.5.67 1.5 1.5v3.75c0 1.38.89 2.5 2.25 2.75-1.36.25-2.25 1.37-2.25 2.75v3.75c0 .83-.67 1.5-1.5 1.5H19V26h1.5c1.93 0 3.5-1.57 3.5-3.5v-3.25c0-1.24.76-2.25 2-2.25v-2c-1.24 0-2-1.01-2-2.25V9.5C24 7.57 22.43 6 20.5 6z"/>
+            </svg>
+            stack.json
+          </label>
+          <label for="tab-4" class="tab-item">
+            <svg width="15" height="15" viewBox="0 0 32 32">
+              <rect x="3" y="5" width="26" height="22" rx="4" fill="#37474F"/>
+              <path d="M8 11l5 5-5 5" fill="none" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 21h8" stroke="#ECEFF1" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            connect.sh
+          </label>
+        </div>
+
+        <!-- Viewport -->
+        <div class="tab-viewport">
+
+          <!-- ================= TAB 1: ABOUT ME & INTERACTIVE DEMO ================= -->
+          <section class="tab-panel" id="view-1">
+            
+            <!-- Cell 1: Clean Authentic Jupyter Markdown Cell -->
+            <div class="notebook-cell">
+              <div class="cell-header">
+                <div class="cell-prompt">
+                  <span class="in-tag">[Markdown]</span>
+                  <span class="in-desc"># overview.md</span>
+                </div>
+                <div class="cell-meta-info">
+                  <span class="status-ok">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    rendered
+                  </span>
+                  <span>ipykernel (Python 3.12)</span>
+                </div>
+              </div>
+              <div class="cell-body">
+                <div class="profile-layout">
+                  <div class="avatar-wrapper">
+                    <img 
+                      class="photo-avatar" 
+                      src="avatar.jpg" 
+                      alt="Саченко Егор — Machine Learning Engineer"
+                      style="object-position: center 15%; filter: contrast(1.05);"
+                    >
+                    <div class="live-badge">
+                      <span class="live-dot"></span> OPEN FOR OFFERS
+                    </div>
+                  </div>
+
+                  <div class="profile-meta">
+                    <h1>Саченко Егор</h1>
+                    <div class="profile-title">&gt; Machine Learning &amp; Deep Learning Engineer &bull; LLM / NLP &amp; High-Load Inference</div>
+                    <p class="profile-summary">
+                      Специализируюсь на полном цикле разработки ML-систем: от подготовки обучающих датасетов и дообучения (Fine-Tuning LoRA/QLoRA) до развертывания отказоустойчивых сервисов на GPU-кластерах. Фокус — оптимизация задержки (low-latency), сокращение расходов на инфраструктуру и RAG-пайплайны с контролем галлюцинаций.
+                    </p>
+                    <div class="pills-row">
+                      <span class="pill">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#f0883e">
+                          <path d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.2L18.8 8 12 11.8 5.2 8 12 4.2zm-7 5.1l6 3.3v6.8l-6-3.3V9.3zm14 6.8l-6 3.3v-6.8l6-3.3v6.8z"/>
+                        </svg>
+                        PyTorch &amp; Distributed Training
+                      </span>
+                      <span class="pill">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#39c5cf">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                        vLLM &amp; TensorRT-LLM
+                      </span>
+                      <span class="pill">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#e3b341">
+                          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                          <circle cx="8.5" cy="10" r="1.5"/>
+                          <circle cx="15.5" cy="10" r="1.5"/>
+                          <path d="M8 15s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Fine-Tuning (SFT / DPO)
+                      </span>
+                      <span class="pill">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="#bc8cff">
+                          <ellipse cx="12" cy="5" rx="9" ry="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke="currentColor" stroke-width="2"/>
+                          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Hybrid Search &amp; RAG
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cell 2: Authentic Jupyter Execution Cell -->
+            <div class="notebook-cell">
+              <div class="cell-header">
+                <div class="cell-prompt">
+                  <span class="in-tag">In [2]:</span>
+                  <span class="in-desc">benchmark = ModelInferenceBenchmark(mode="production")</span>
+                </div>
+                <div class="cell-meta-info">
+                  <span class="status-ok">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                      <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    0.04s
+                  </span>
+                  <span>torch24-cu124</span>
+                </div>
+              </div>
+              <div class="cell-body">
+                
+                <div class="sandbox-explainer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#39c5cf" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                  </svg>
+                  <span><strong>Как это работает:</strong> Выберите один из 3-х практических сценариев ниже, чтобы увидеть, как алгоритм обрабатывает запрос и какие метрики выдаёт:</span>
+                </div>
+
+                <!-- Radio Buttons for Testing -->
+                <input type="radio" name="task-run" id="task-sentiment" class="test-radios" checked>
+                <input type="radio" name="task-run" id="task-churn" class="test-radios">
+                <input type="radio" name="task-run" id="task-quant" class="test-radios">
+
+                <div class="test-controls">
+                  <label for="task-sentiment" class="test-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    1. RAG-поиск с фактчекингом
+                  </label>
+
+                  <label for="task-churn" class="test-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    2. Прогноз риска оттока клиента
+                  </label>
+
+                  <label for="task-quant" class="test-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    3. Замер скорости LLM (vLLM)
+                  </label>
+                </div>
+
+                <!-- Output Display with Clear Explanations -->
+                <div class="output-screen">
+                  
+                  <!-- Screen 1: RAG -->
+                  <div class="out-block" id="out-sentiment">
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Входной запрос пользователя:</span>
+                      <span class="sandbox-val"><em>«Каковы условия SLA при сбое репликации в регионе eu-central-1?»</em></span>
+                    </div>
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Что сделала модель:</span>
+                      <span class="sandbox-val">Нашла 3 точных абзаца в базе знаний через гибридный индекс (Qdrant + BM25), выполнила Cross-Encoder переранжирование и подтвердила факты без домысливания.</span>
+                    </div>
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Технические метрики работы:</span>
+                      <div>
+                        <span class="badge-metric green">Время ответа: 42.1 ms</span>
+                        <span class="badge-metric cyan">Точность контекста (Precision): 0.94</span>
+                        <span class="badge-metric green">Риск галлюцинаций: &lt; 0.02 (Минимальный)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Screen 2: Churn -->
+                  <div class="out-block" id="out-churn">
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Входные данные профиля:</span>
+                      <span class="sandbox-val"><em>Клиент #10492 &bull; Падение запросов к API на 42% &bull; 6 обращений в саппорт за 7 дней</em></span>
+                    </div>
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Что сделала модель:</span>
+                      <span class="sandbox-val">Калиброванный CatBoost классификатор определил высокий риск потери клиента и выявил ключевой негативный триггер с помощью SHAP-анализа (ошибки лимитов 429).</span>
+                    </div>
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Технические метрики работы:</span>
+                      <div>
+                        <span class="badge-metric orange">Вероятность оттока: 79% (Высокая)</span>
+                        <span class="badge-metric cyan">Время инференса: 3.4 ms</span>
+                        <span class="badge-metric green">Действие: авто-тикет в Customer Success</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Screen 3: Quant -->
+                  <div class="out-block" id="out-quant">
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Тестируемая архитектура:</span>
+                      <span class="sandbox-val"><em>Модель LLaMA-3-8B &bull; Сравнение стандартного FP16 против AWQ 4-bit квантования</em></span>
+                    </div>
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Что сделала модель:</span>
+                      <span class="sandbox-val">За счёт упаковки весов в 4-бит и механизма PagedAttention вдвое снижена нагрузка на шину памяти GPU при сохранении точности ответов.</span>
+                    </div>
+                    <div class="sandbox-row">
+                      <span class="sandbox-label">Технические метрики работы:</span>
+                      <div>
+                        <span class="badge-metric green">Задержка 1-го токена (TTFT): 38 ms (-58%)</span>
+                        <span class="badge-metric cyan">Скорость: 138 токенов/сек</span>
+                        <span class="badge-metric green">Расход VRAM: 5.2 GB (вместо 15.8 GB)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </section>
+
+          <!-- ================= TAB 2: PROJECTS PORTFOLIO ================= -->
+          <section class="tab-panel" id="view-2">
+            
+            <div class="projects-intro-banner">
+              <div class="projects-intro-title">
+                <strong>ПОРТФОЛИО ПРОЕКТОВ (COMMERCIAL CASE STUDIES)</strong> &bull; Ниже представлены реальные производственные кейсы по формуле: <em>Проблема бизнеса &rarr; Инженерное решение &rarr; Измеримый результат</em>.
+              </div>
+              <span class="role-tag">3 Подтверждённых кейса</span>
+            </div>
+
+            <div class="projects-grid">
+              
+              <!-- Case 1: High-Performance LLM Serving -->
+              <div class="card-project">
+                <div class="card-project-header">
+                  <div class="project-title-area">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#39c5cf" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                    <span class="project-title">Кейс 1: Ускорение инференса LLM и сокращение расходов на GPU</span>
+                  </div>
+                  <span class="role-tag">LLM / High-Load Inference</span>
+                </div>
+
+                <div class="card-project-body">
+                  <div class="project-stage">
+                    <div class="stage-title problem">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                      </svg>
+                      1. Проблема бизнеса (Problem):
+                    </div>
+                    <div class="stage-text">
+                      Сервис генерации на базе 70B LLM не выдерживал пиковую нагрузку (50+ запросов в секунду). Задержка первого токена достигала 4.5 секунд, клиенты получали таймауты, а аренда новых GPU-серверов стоила бизнесу неоправданно дорого.
+                    </div>
+                  </div>
+
+                  <div class="project-stage">
+                    <div class="stage-title solution">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                      </svg>
+                      2. Что я сделал как инженер (Solution):
+                    </div>
+                    <ul class="solution-list">
+                      <li>Перевёл продакшен со стандартного HuggingFace на движок <strong>vLLM</strong> с непрерывным батчингом (Continuous Batching) и управлением фрагментацией памяти через PagedAttention.</li>
+                      <li>Внедрил квантование весов <strong>AWQ 4-bit (W4A16)</strong>, сжав модель в 3 раза по памяти практически без потери качества ответов.</li>
+                      <li>Сконфигурировал префиксное кэширование (prefix caching) для повторяющихся инструкций и настроил распределение весов Tensor Parallelism на 4x A100 GPU.</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-stage">
+                    <div class="stage-title result">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      3. Измеримый результат для компании (Result):
+                    </div>
+                    <div class="metrics-summary-bar">
+                      <div class="metric-pill-box">
+                        <span class="label">Задержка ответа (p95 TTFT):</span>
+                        <span class="value">180 ms (снижена на 62%)</span>
+                      </div>
+                      <div class="metric-pill-box">
+                        <span class="label">Пропускная способность:</span>
+                        <span class="value">+280% токенов в секунду</span>
+                      </div>
+                      <div class="metric-pill-box">
+                        <span class="label">Экономия бюджета:</span>
+                        <span class="value">-50% серверов под нагрузку</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Case 2: Multi-Stage Enterprise RAG -->
+              <div class="card-project">
+                <div class="card-project-header">
+                  <div class="project-title-area">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bc8cff" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"/>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <span class="project-title">Кейс 2: Корпоративная RAG-система поиска по 200 000+ документам</span>
+                  </div>
+                  <span class="role-tag">NLP / Information Retrieval</span>
+                </div>
+
+                <div class="card-project-body">
+                  <div class="project-stage">
+                    <div class="stage-title problem">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                      </svg>
+                      1. Проблема бизнеса (Problem):
+                    </div>
+                    <div class="stage-text">
+                      Сотрудники тратили часы на поиск информации по регламентам и кодовой базе. Простой семантический поиск часто путал похожие инструкции, из-за чего языковая модель галлюцинировала и давала опасные некорректные ответы.
+                    </div>
+                  </div>
+
+                  <div class="project-stage">
+                    <div class="stage-title solution">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                      </svg>
+                      2. Что я сделал как инженер (Solution):
+                    </div>
+                    <ul class="solution-list">
+                      <li>Спроектировал <strong>двухэтапный гибридный поиск</strong>: плотные эмбеддинги в векторной базе Qdrant объединены с точным поиском по ключевым словам (BM25) через Reciprocal Rank Fusion.</li>
+                      <li>Добавил этап переранжирования контекста с помощью легковесного <strong>Cross-Encoder</strong> (BGE-Reranker), отсекающий 85% нерелевантного информационного шума.</li>
+                      <li>Встроил в CI/CD автоматический аудит генерации с помощью фреймворка <strong>Ragas</strong> для контроля верности фактам перед деплоем изменений.</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-stage">
+                    <div class="stage-title result">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      3. Измеримый результат для компании (Result):
+                    </div>
+                    <div class="metrics-summary-bar">
+                      <div class="metric-pill-box">
+                        <span class="label">Точность поиска (Hit Rate @ 5):</span>
+                        <span class="value">93.4% (было 68.1%)</span>
+                      </div>
+                      <div class="metric-pill-box">
+                        <span class="label">Контроль галлюцинаций (Faithfulness):</span>
+                        <span class="value">0.96 / 1.0 балла</span>
+                      </div>
+                      <div class="metric-pill-box">
+                        <span class="label">Скорость ответа ассистента:</span>
+                        <span class="value">&lt; 1.2 секунды</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Case 3: Production ML Pipeline & Drift Monitoring -->
+              <div class="card-project">
+                <div class="card-project-header">
+                  <div class="project-title-area">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="2">
+                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                      <line x1="6" y1="6" x2="6.01" y2="6"/>
+                      <line x1="6" y1="18" x2="6.01" y2="18"/>
+                    </svg>
+                    <span class="project-title">Кейс 3: Автоматизированный MLOps-конвейер скоринга с мониторингом дрейфа</span>
+                  </div>
+                  <span class="role-tag">MLOps &amp; Classical ML</span>
+                </div>
+
+                <div class="card-project-body">
+                  <div class="project-stage">
+                    <div class="stage-title problem">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                      </svg>
+                      1. Проблема бизнеса (Problem):
+                    </div>
+                    <div class="stage-text">
+                      Предиктивные модели обучались аналитиками вручную раз в квартал. Из-за дрейфа поведения клиентов точность прогнозов незаметно падала на 15–20%, приводя к запоздалой реакции на отток пользователей.
+                    </div>
+                  </div>
+
+                  <div class="project-stage">
+                    <div class="stage-title solution">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                      </svg>
+                      2. Что я сделал как инженер (Solution):
+                    </div>
+                    <ul class="solution-list">
+                      <li>Построил CI/CD-конвейер переобучения в <strong>Apache Airflow</strong> с версионированием обучающих выборок через <strong>DVC</strong> и реестром моделей в <strong>MLflow</strong>.</li>
+                      <li>Упаковал микросервис инференса на <strong>FastAPI</strong> в легковесный Docker-контейнер с кэшированием скоринга в Redis.</li>
+                      <li>Внедрил дашборд в <strong>Evidently AI + Prometheus</strong>, автоматически детектирующий дрейф признаков (Data Drift) и отправляющий алерты в Telegram/Slack.</li>
+                    </ul>
+                  </div>
+
+                  <div class="project-stage">
+                    <div class="stage-title result">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      3. Измеримый результат для компании (Result):
+                    </div>
+                    <div class="metrics-summary-bar">
+                      <div class="metric-pill-box">
+                        <span class="label">Скорость выкатки новой модели:</span>
+                        <span class="value">20 минут (вместо 4 дней)</span>
+                      </div>
+                      <div class="metric-pill-box">
+                        <span class="label">Качество классификации (ROC-AUC):</span>
+                        <span class="value">0.87 (стабильно без просадок)</span>
+                      </div>
+                      <div class="metric-pill-box">
+                        <span class="label">Надёжность сервиса (SLA):</span>
+                        <span class="value">99.9% доступности</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ================= TAB 3: STACK.JSON ================= -->
+          <section class="tab-panel" id="view-3">
+            <div class="json-editor-container">
+              <div class="json-editor-topbar">
+                <div class="json-breadcrumb">
+                  <svg width="15" height="15" viewBox="0 0 32 32">
+                    <path fill="#FBC02D" d="M11.5 6C9.57 6 8 7.57 8 9.5v3.25c0 1.24-.76 2.25-2 2.25v2c1.24 0 2 1.01 2 2.25v3.25C8 24.43 9.57 26 11.5 26h1.5v-2.5h-1.5c-.83 0-1.5-.67-1.5-1.5v-3.75c0-1.38-.89-2.5-2.25-2.75 1.36-.25 2.25-1.37 2.25-2.75V9c0-.83.67-1.5 1.5-1.5H13V5h-1.5zm9 0H19v2.5h1.5c.83 0 1.5.67 1.5 1.5v3.75c0 1.38.89 2.5 2.25 2.75-1.36.25-2.25 1.37-2.25 2.75v3.75c0 .83-.67 1.5-1.5 1.5H19V26h1.5c1.93 0 3.5-1.57 3.5-3.5v-3.25c0-1.24.76-2.25 2-2.25v-2c-1.24 0-2-1.01-2-2.25V9.5C24 7.57 22.43 6 20.5 6z"/>
+                  </svg>
+                  <span>portfolio-ml &gt; config &gt; <strong>stack.json</strong></span>
+                </div>
+                <div class="json-badges-row">
+                  <span class="json-badge">UTF-8</span>
+                  <span class="json-badge">Validated JSON</span>
+                </div>
+              </div>
+
+              <div class="json-canvas">
+                <div class="json-row">
+                  <span class="json-ln">01</span>
+                  <span class="json-code"><span class="jp">{</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">02</span>
+                  <span class="json-code"><span class="g"></span><span class="jc">// 01. CORE PROGRAMMING</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">03</span>
+                  <span class="json-code"><span class="g"></span><span class="jk">"programming_languages"</span><span class="jp">:</span> <span class="jp">{</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">04</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"python"</span><span class="jp">:</span> <span class="js">"NumPy, Pandas, PyTorch, AsyncIO, Poetry"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">05</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"sql"</span><span class="jp">:</span> <span class="js">"PostgreSQL, ClickHouse, Query Optimization"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">06</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"bash"</span><span class="jp">:</span> <span class="js">"Linux Administration, Shell Scripting, Cluster Tools"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">07</span>
+                  <span class="json-code"><span class="g"></span><span class="jp">}</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">08</span>
+                  <span class="json-code"><span class="g"></span><span class="jc">// 02. ML &amp; DEEP LEARNING FRAMEWORKS</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">09</span>
+                  <span class="json-code"><span class="g"></span><span class="jk">"machine_learning"</span><span class="jp">:</span> <span class="jp">{</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">10</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"frameworks"</span><span class="jp">:</span> <span class="jp">[</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">11</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"PyTorch"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">12</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Hugging Face (Transformers, Datasets, PEFT, TRL)"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">13</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Scikit-Learn"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">14</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jp">]</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">15</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"tabular_and_boosting"</span><span class="jp">:</span> <span class="jp">[</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">16</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"CatBoost"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">17</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"LightGBM"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">18</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"XGBoost"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">19</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jp">]</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">20</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"distributed_training"</span><span class="jp">:</span> <span class="jp">[</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">21</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"DistributedDataParallel (DDP)"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">22</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Fully Sharded Data Parallel (FSDP)"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">23</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"DeepSpeed (ZeRO-2/3)"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">24</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jp">]</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">25</span>
+                  <span class="json-code"><span class="g"></span><span class="jp">}</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">26</span>
+                  <span class="json-code"><span class="g"></span><span class="jc">// 03. LLM, RAG &amp; SERVING RUNTIMES</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">27</span>
+                  <span class="json-code"><span class="g"></span><span class="jk">"llm_and_nlp"</span><span class="jp">:</span> <span class="jp">{</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">28</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"training_and_alignment"</span><span class="jp">:</span> <span class="jp">[</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">29</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"LoRA / QLoRA"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">30</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Supervised Fine-Tuning (SFT)"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">31</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Direct Preference Optimization (DPO)"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">32</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jp">]</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">33</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"rag_architecture"</span><span class="jp">:</span> <span class="jp">[</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">34</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Hybrid Retrieval (Dense + BM25 Sparse)"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">35</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Cross-Encoder Reranking"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">36</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"LlamaIndex &amp; LangChain"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">37</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"Ragas (RAG Evaluation Benchmark)"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">38</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jp">]</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">39</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"inference_optimization"</span><span class="jp">:</span> <span class="jp">[</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">40</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"vLLM (PagedAttention, Continuous Batching)"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">41</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"TensorRT-LLM"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">42</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="g"></span><span class="js">"AWQ &amp; GPTQ 4-bit Quantization"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">43</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jp">]</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">44</span>
+                  <span class="json-code"><span class="g"></span><span class="jp">}</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">45</span>
+                  <span class="json-code"><span class="g"></span><span class="jc">// 04. MLOPS &amp; DEPLOYMENT</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">46</span>
+                  <span class="json-code"><span class="g"></span><span class="jk">"mlops_and_infrastructure"</span><span class="jp">:</span> <span class="jp">{</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">47</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"serving"</span><span class="jp">:</span> <span class="js">"FastAPI, Triton Inference Server, Ray Serve"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">48</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"experiment_tracking"</span><span class="jp">:</span> <span class="js">"Weights &amp; Biases, MLflow, DVC"</span><span class="jp">,</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">49</span>
+                  <span class="json-code"><span class="g"></span><span class="g"></span><span class="jk">"orchestration"</span><span class="jp">:</span> <span class="js">"Docker, Kubernetes, Apache Airflow"</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">50</span>
+                  <span class="json-code"><span class="g"></span><span class="jp">}</span></span>
+                </div>
+                <div class="json-row">
+                  <span class="json-ln">51</span>
+                  <span class="json-code"><span class="jp">}</span></span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ================= TAB 4: CONNECT.SH ================= -->
+          <section class="tab-panel" id="view-4">
+            <div class="contact-card">
+              <h2>$ bash ./connect_endpoint.sh</h2>
+              <p>
+                Открыт к предложениям о сотрудничестве: full-time позициям (Senior ML / LLM Engineer), проектной разработке RAG-систем и оптимизации высоконагруженного инференса.
+              </p>
+
+              <div class="btn-group">
+                <a href="https://t.me/egorick2" target="_blank" rel="noopener noreferrer" class="action-btn btn-primary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                  </svg>
+                  Telegram: @egorick2
+                </a>
+
+                <a href="https://github.com/sachenko1" target="_blank" rel="noopener noreferrer" class="action-btn btn-secondary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                  GitHub: sachenko1
+                </a>
+
+                <a href="mailto:leonmop228@gmail.com" class="action-btn btn-secondary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                  Email: leonmop228@gmail.com
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+    </div>
+
+    <footer class="statusbar">
+      <div class="status-group">
+        <span class="status-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="6" y1="3" x2="6" y2="15"/>
+            <circle cx="18" cy="6" r="3"/>
+            <circle cx="6" cy="18" r="3"/>
+            <path d="M18 9a9 9 0 0 1-9 9"/>
+          </svg>
+          git:(main)
+        </span>
+        <span class="status-item">&bull; 0 errors, 0 warnings</span>
+      </div>
+
+      <div class="status-group">
+        <span class="status-item">UTF-8</span>
+        <span class="status-item">Spaces: 2</span>
+        <span class="status-item">Python 3.12 (torch24-cu124)</span>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
