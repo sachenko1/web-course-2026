@@ -139,7 +139,7 @@ function updateCounters() {
 function createTodoElement(todo, isVisible) {
   const li = document.createElement('li');
   li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
-  li.dataset.id = todo.id;
+  li.dataset.id = String(todo.id);
 
   if (!isVisible) {
     li.style.display = 'none';
@@ -205,13 +205,25 @@ function createTodoElement(todo, isVisible) {
 }
 
 function render() {
-  todoList.innerHTML = '';
-
   if (todos.length === 0) {
     emptyStateEl.classList.remove('hidden');
   } else {
     emptyStateEl.classList.add('hidden');
   }
+
+  const existingElements = Array.from(todoList.children);
+  const existingMap = new Map();
+  existingElements.forEach(el => {
+    existingMap.set(el.dataset.id, el);
+  });
+
+  const activeIds = new Set(todos.map(t => String(t.id)));
+
+  existingElements.forEach(el => {
+    if (!activeIds.has(el.dataset.id)) {
+      el.remove();
+    }
+  });
 
   todos.forEach(todo => {
     const isVisible =
@@ -219,8 +231,26 @@ function render() {
       (currentFilter === 'active' && !todo.completed) ||
       (currentFilter === 'completed' && todo.completed);
 
-    const todoEl = createTodoElement(todo, isVisible);
-    todoList.appendChild(todoEl);
+    const strId = String(todo.id);
+
+    if (existingMap.has(strId)) {
+      const el = existingMap.get(strId);
+      el.style.display = isVisible ? '' : 'none';
+
+      if (todo.completed) {
+        el.classList.add('completed');
+      } else {
+        el.classList.remove('completed');
+      }
+
+      const cb = el.querySelector('input[type="checkbox"]');
+      if (cb && cb.checked !== todo.completed) {
+        cb.checked = todo.completed;
+      }
+    } else {
+      const newEl = createTodoElement(todo, isVisible);
+      todoList.appendChild(newEl);
+    }
   });
 
   updateCounters();
