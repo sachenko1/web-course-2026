@@ -2,10 +2,10 @@
 4 группа (а) подгруппа
 
 - [x] task0
-- [ ] task1
-- [ ] task2
-- [ ] task3
-- [ ] task4
+- [x] task1
+- [x] task2
+- [x] task3
+- [x] task4
 - [ ] task5
 - [ ] task6
 - [ ] task7
