@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Быки и коровы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="no-copy">
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <main class="game-app">
+    <header class="app-header">
+      <h1 class="app-title">Быки и коровы</h1>
+      <p class="app-subtitle">Угадайте 4-значное число с неповторяющимися цифрами</p>
+    </header>
+
+    <div id="win-banner" class="win-banner hidden" role="alert" aria-live="polite">
+      <div class="win-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="7"></circle>
+          <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+        </svg>
+      </div>
+      <span id="win-text"></span>
+    </div>
+
+    <section class="game-input-section">
+      <form id="game-form" class="game-form" novalidate>
+        <div class="input-wrapper">
+          <div class="input-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <input 
+            type="text" 
+            id="guess-input" 
+            placeholder="4 уникальные цифры (напр. 1234)" 
+            maxlength="4"
+            autocomplete="off"
+            aria-label="Ваша попытка"
+          >
+          <button type="submit" id="submit-btn" class="btn btn-primary" title="Проверить попытку">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Проверить</span>
+          </button>
+        </div>
+        <div id="validation-msg" class="validation-msg" role="alert" aria-live="polite">
+          <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span id="validation-text"></span>
+        </div>
+      </form>
+    </section>
+
+    <section class="game-controls">
+      <button type="button" id="restart-btn" class="btn btn-secondary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+          <polyline points="3 3 3 8 8 8"></polyline>
+        </svg>
+        <span>Новая игра</span>
+      </button>
+
+      <div class="game-counter" aria-live="polite">
+        <span class="counter-item">Попыток: <strong id="attempts-count">0</strong></span>
+      </div>
+    </section>
+
+    <section class="game-list-container">
+      <ul id="history-list" class="history-list" aria-label="История попыток"></ul>
+
+      <div id="empty-state" class="empty-state">
+        <div class="empty-graphic-wrapper">
+          <svg class="empty-vector" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="12" y="10" width="40" height="46" rx="4" stroke-opacity="0.8" />
+            <line x1="20" y1="22" x2="44" y2="22" stroke-opacity="0.5" />
+            <line x1="20" y1="30" x2="36" y2="30" stroke-opacity="0.5" />
+            <circle cx="22" cy="40" r="2.5" fill="currentColor" fill-opacity="0.4" />
+            <line x1="28" y1="40" x2="42" y2="40" stroke-opacity="0.5" />
+          </svg>
+        </div>
+        <p class="empty-text">История ходов пуста</p>
+        <span class="empty-subtext">Сделайте первое предположение с помощью формы выше</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
