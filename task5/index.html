@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Says</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="no-copy">
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <main class="game-app">
+    <header class="app-header">
+      <h1 class="app-title">Simon Says</h1>
+      <p class="app-subtitle">Запоминайте и повторяйте растущую последовательность сигналов</p>
+    </header>
+
+    <div id="status-banner" class="status-banner hidden" role="alert" aria-live="polite">
+      <div class="status-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="15" y1="9" x2="9" y2="15"></line>
+          <line x1="9" y1="9" x2="15" y2="15"></line>
+        </svg>
+      </div>
+      <span id="status-text"></span>
+    </div>
+
+    <section class="simon-board-container">
+      <div class="simon-board" id="simon-board" aria-label="Игровое поле Simon">
+        <button type="button" class="simon-btn btn-green" data-index="0" aria-label="Зеленый сектор" disabled></button>
+        <button type="button" class="simon-btn btn-red" data-index="1" aria-label="Красный сектор" disabled></button>
+        <button type="button" class="simon-btn btn-yellow" data-index="2" aria-label="Желтый сектор" disabled></button>
+        <button type="button" class="simon-btn btn-blue" data-index="3" aria-label="Синий сектор" disabled></button>
+        <div class="board-center-badge">
+          <span class="center-label">SIMON</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="game-controls">
+      <button type="button" id="start-btn" class="btn btn-primary">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span id="start-btn-text">Старт</span>
+      </button>
+
+      <div class="game-counter" aria-live="polite">
+        <span class="counter-item">Уровень: <strong id="level-count">0</strong></span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
