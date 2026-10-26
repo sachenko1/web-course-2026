@@ -6,9 +6,9 @@
 - [x] task2
 - [x] task3
 - [x] task4
-- [ ] task5
-- [ ] task6
-- [ ] task7
+- [x] task5
+- [x] task6
+- [x] task7
 - [ ] task8
 - [ ] task9
 - [ ] task10
