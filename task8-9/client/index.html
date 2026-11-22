@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zen-Money</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <main class="app">
+    <header class="app-header">
+      <div class="header-top">
+        <h1 class="app-title">Zen-Money</h1>
+        <button type="button" id="theme-btn" class="icon-chip" aria-label="Сменить тему">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="stats-panel">
+        <div class="stat-item">
+          <span class="stat-label">Доходы</span>
+          <strong id="income-val" class="stat-value income">0 ₽</strong>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Расходы</span>
+          <strong id="expense-val" class="stat-value expense">0 ₽</strong>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Баланс</span>
+          <strong id="balance-val" class="stat-value">0 ₽</strong>
+        </div>
+      </div>
+    </header>
+
+    <div id="error-box" class="error-box hidden"></div>
+
+    <form id="tx-form" class="card-section" novalidate>
+      <div class="section-head">
+        <h2 id="form-title" class="section-title">Новая операция</h2>
+        <div class="head-actions">
+          <button type="button" id="toggle-cat" class="btn-chip">+ Категория</button>
+          <button type="button" id="cancel-edit" class="btn-chip hidden">Отмена</button>
+        </div>
+      </div>
+      <div class="grid-2">
+        <select id="tx-type">
+          <option value="expense">Расход</option>
+          <option value="income">Доход</option>
+        </select>
+        <select id="tx-category" required></select>
+      </div>
+      <div class="grid-2">
+        <input type="number" id="tx-amount" placeholder="Сумма, ₽" min="0.01" step="0.01" required>
+        <input type="date" id="tx-date" required>
+      </div>
+      <div class="row-submit">
+        <input type="text" id="tx-comment" placeholder="Комментарий">
+        <button type="submit" id="tx-submit" class="btn btn-primary">Добавить</button>
+      </div>
+    </form>
+
+    <form id="cat-form" class="card-section hidden" novalidate>
+      <h2 class="section-title">Новая категория</h2>
+      <div class="row-cat">
+        <input type="text" id="cat-name" placeholder="Название" required>
+        <select id="cat-type">
+          <option value="expense">Расход</option>
+          <option value="income">Доход</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Создать</button>
+      </div>
+    </form>
+
+    <section class="card-section">
+      <div class="section-head">
+        <h2 class="section-title">Операции</h2>
+        <button type="button" id="reset-filters" class="btn-chip">Сбросить</button>
+      </div>
+      <div class="filter-bar">
+        <div class="filter-row">
+          <div id="filter-type" class="segmented">
+            <button type="button" class="seg-btn active" data-type="">Все</button>
+            <button type="button" class="seg-btn" data-type="income">Доходы</button>
+            <button type="button" class="seg-btn" data-type="expense">Расходы</button>
+          </div>
+          <select id="filter-category">
+            <option value="">Все категории</option>
+          </select>
+        </div>
+        <div class="grid-2">
+          <label class="date-field">
+            <span>От</span>
+            <input type="date" id="filter-from">
+          </label>
+          <label class="date-field">
+            <span>До</span>
+            <input type="date" id="filter-to">
+          </label>
+        </div>
+      </div>
+      <div id="tx-list" class="tx-list"></div>
+    </section>
+  </main>
+</body>
+</html>
